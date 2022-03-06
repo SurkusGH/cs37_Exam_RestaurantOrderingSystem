@@ -10,7 +10,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
     {
         public bool NoSuggar { get; set; }
         
-        public Drinks_DataType(string id, decimal price, int timeToPrepare, bool noSuggar)
+        public Drinks_DataType(string id = "", decimal price = 0, int timeToPrepare = 0, bool noSuggar = false)
         {
             ID = id;
             Price = price;

@@ -10,12 +10,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
     {
         public bool IsVegan { get; set; }
 
-        public Food_DataType(string id, decimal price, int timeToPrepare, bool isVegan) 
+        public Food_DataType(string id = "", decimal price = 0, int timeToPrepare = 0, bool isVegan = false) 
         {
             ID = id;
             Price = price;
-            IsVegan = isVegan;
             TimeToPrepare = timeToPrepare;
+            IsVegan = isVegan;
         }
     }
 }

@@ -11,10 +11,10 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory
         public static void MenuChoice()
         {
             int index = 0;
-            switch (index)
-            {
-                default:
-            }
+            //switch (index)
+            //{
+            //    default:
+            //}
         }
     }
 }

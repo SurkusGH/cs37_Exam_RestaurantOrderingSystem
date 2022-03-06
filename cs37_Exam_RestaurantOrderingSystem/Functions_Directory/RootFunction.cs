@@ -11,7 +11,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory
     {
         public static void RunProgram()
         {
-            ConsoleStringInterpolation.GUI_Menu(); // <-- Tik spausdina
+            ConsoleStringInterpolation.GUI_Menu_TableChoice(); // <-- Tik spausdina
             FunctionCalls.MenuChoice(); // <-- Tik prašo input'o
         }
     }
