@@ -6,34 +6,35 @@ using System.Threading.Tasks;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions_Directory
 {
-    internal class ValidationHelper
+    public class ValidationHelper
     {
-        public static decimal InputValidationDecimal()
+        public static int InputValidation(int menuSelectionSize)
         {
             string input = Console.ReadLine();
-            decimal inputValue;
-            bool success = decimal.TryParse(input, out inputValue) && inputValue > 0;
+            int inputValue;
+            bool success = int.TryParse(input, out inputValue) && inputValue > -1 && inputValue <= menuSelectionSize;
             while (!success)
             {
                 Console.WriteLine("(!) Netinkama įvestis");
                 Console.Write(" -> Bandykite dar kartą:");
                 input = Console.ReadLine();
-                success = decimal.TryParse(input, out inputValue) && inputValue > 0;
+                success = int.TryParse(input, out inputValue) && inputValue > -1 && inputValue <= menuSelectionSize;
             }
             Console.Clear();
             return inputValue;
         }
-        public static int InputValidation(int selectorSize)
+
+        public static int InputValidationListGeneric<T>(List<T> ListIndexNumber)
         {
             string input = Console.ReadLine();
             int inputValue;
-            bool success = int.TryParse(input, out inputValue) && inputValue > 0 && inputValue <= selectorSize;
+            bool success = int.TryParse(input, out inputValue) && inputValue > -1 && inputValue <= ListIndexNumber.Count;
             while (!success)
             {
                 Console.WriteLine("(!) Netinkama įvestis");
                 Console.Write(" -> Bandykite dar kartą:");
                 input = Console.ReadLine();
-                success = int.TryParse(input, out inputValue) && inputValue > 0 && inputValue <= selectorSize;
+                success = int.TryParse(input, out inputValue) && inputValue > -1 && inputValue <= ListIndexNumber.Count;
             }
             Console.Clear();
             return inputValue;
