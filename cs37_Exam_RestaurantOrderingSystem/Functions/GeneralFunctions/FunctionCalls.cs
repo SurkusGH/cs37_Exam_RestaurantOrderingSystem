@@ -1,15 +1,15 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.GUI_Directory;
-using cs37_Exam_RestaurantOrderingSystem.DataType_Directory;
-using cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions;
-using cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions.ChequeSystem;
-using cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Directory;
+using cs37_Exam_RestaurantOrderingSystem.DataType;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
 {
     public class FunctionCalls
     {
@@ -100,6 +100,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
+                    ExternalCheque.ChequeConstructorAndSender();
                     ExternalCheque.ExternalChequeConstructor_Reset();
                     MenuChoice();
                     break;
@@ -139,6 +140,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
+                    ExternalCheque.ChequeConstructorAndSender();
                     ExternalCheque.ExternalChequeConstructor_Reset();
                     MenuChoice();
                     break;

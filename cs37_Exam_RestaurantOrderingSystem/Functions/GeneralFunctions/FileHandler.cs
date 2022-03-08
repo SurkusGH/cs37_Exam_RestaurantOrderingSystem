@@ -1,10 +1,10 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.DataType_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.DataType;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory
 {
     public class FileHandler
     {

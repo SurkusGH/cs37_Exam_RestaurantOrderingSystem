@@ -1,13 +1,13 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.DataType_Directory;
-using cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions.ChequeSystem;
-using cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.DataType;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.GUI_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Directory
 {
     public class ConsoleStringInterpolation
     {
@@ -107,7 +107,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.G
         {
             Console.WriteLine($"\nČekio preview:");
             ExternalCheque.externalCheque.ForEach(item => Console.WriteLine(item));
-            Console.WriteLine($"Viso: {RootFunction.tables[FunctionCalls.tableIndex].OrderSum} Eur\n");
+            Console.WriteLine($"Viso: {ExternalCheque.Sum} Eur\n");
         }
     }
 }

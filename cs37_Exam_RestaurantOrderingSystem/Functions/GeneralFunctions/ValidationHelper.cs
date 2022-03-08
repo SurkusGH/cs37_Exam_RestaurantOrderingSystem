@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory
 {
     public class ValidationHelper
     {

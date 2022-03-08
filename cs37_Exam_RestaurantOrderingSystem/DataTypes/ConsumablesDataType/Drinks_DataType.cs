@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.DataType
 {
     public  class Drinks_DataType : Item_DataType
     {
