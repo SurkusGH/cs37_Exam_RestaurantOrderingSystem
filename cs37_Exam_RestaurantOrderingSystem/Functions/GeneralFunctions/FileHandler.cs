@@ -9,8 +9,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Director
     public class FileHandler
     {
         #region TableDataManipulation
-        //static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
-        static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
+        static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
+        //static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
         public static List<Table_DataType> ReadTableData()
         {
             var csvLineReader = new StreamReader(tableDataPath);
@@ -52,8 +52,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Director
         #endregion
 
         #region FoodDataManipulation
-        //static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
-        static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
+        static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
+        //static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
         public static List<Food_DataType> ReadFoodData()
         {
             var csvLineReader = new StreamReader(foodDataPath);
@@ -77,6 +77,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Director
             food.Price = decimal.Parse(tempCache[1]);
             food.TimeToPrepare = int.Parse(tempCache[2]);
             food.IsVegan = bool.Parse(tempCache[3]);
+            food.ItemsSold = int.Parse(tempCache[4]);
 
             return food;
         }
@@ -87,13 +88,14 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Director
                                                                           $"{foodData.Price}, " +
                                                                           $"{foodData.TimeToPrepare}" +
                                                                           $"{foodData.IsVegan}" +
+                                                                          $"{foodData.ItemsSold}" +
                                                                           Environment.NewLine));
         }
         #endregion
 
         #region DrinksDataManipulation
-        //static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
-        static string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
+        static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
+        //static string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
         public static List<Drinks_DataType> ReadDrinksData()
         {
             var csvLineReader = new StreamReader(drinksDataPath);
@@ -117,6 +119,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Director
             drink.Price = decimal.Parse(tempCache[1]);
             drink.TimeToPrepare = int.Parse(tempCache[2]);
             drink.NoSuggar = bool.Parse(tempCache[3]);
+            drink.ItemsSold = int.Parse(tempCache[4]);
 
             return drink;
         }
@@ -127,6 +130,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Director
                                                                                 $"{drinksData.Price}, " +
                                                                                 $"{drinksData.TimeToPrepare}" +
                                                                                 $"{drinksData.NoSuggar}" +
+                                                                                $"{drinksData.ItemsSold}" +
                                                                                 Environment.NewLine));
         }
         #endregion

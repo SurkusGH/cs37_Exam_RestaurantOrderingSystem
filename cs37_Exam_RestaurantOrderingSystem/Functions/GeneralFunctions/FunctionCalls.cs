@@ -42,6 +42,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
                     break;
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
+                    ChequeAutoDelivery.SendCheque();
                     MenuChoice();
                     break;
             }
@@ -73,35 +74,39 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
             switch (ValidationHelper.InputValidationListGeneric(RootFunction.foods))
             {
                 case 1:
-                    ExternalCheque.ExternalChequeConstructor_AddFood(tableIndex, 0);
+                    ChequeGenerator.ChequeConstructor_AddFood(tableIndex, 0);
                     ConsoleStringInterpolation.GUI_Food_SubMenu();
                     SubMenuFoodChoice();
                     break;
                 case 2:
-                    ExternalCheque.ExternalChequeConstructor_AddFood(tableIndex, 1);
+                    ChequeGenerator.ChequeConstructor_AddFood(tableIndex, 1);
                     ConsoleStringInterpolation.GUI_Food_SubMenu();
                     SubMenuFoodChoice();
                     break;
                 case 3:
-                    ExternalCheque.ExternalChequeConstructor_AddFood(tableIndex, 2);
+                    ChequeGenerator.ChequeConstructor_AddFood(tableIndex, 2);
                     ConsoleStringInterpolation.GUI_Food_SubMenu();
                     SubMenuFoodChoice();
                     break;
                 case 4:
-                    ExternalCheque.ExternalChequeConstructor_AddFood(tableIndex, 3);
+                    ChequeGenerator.ChequeConstructor_AddFood(tableIndex, 3);
                     ConsoleStringInterpolation.GUI_Food_SubMenu();
                     SubMenuFoodChoice();
                     break;
                 case 5:
-                    ExternalCheque.ExternalChequeConstructor_AddFood(tableIndex, 4);
+                    ChequeGenerator.ChequeConstructor_AddFood(tableIndex, 4);
                     ConsoleStringInterpolation.GUI_Food_SubMenu();
                     SubMenuFoodChoice();
+                    break;
+                case 6:
+                    SubMenuDrinksChoice();
+                    ConsoleStringInterpolation.GUI_Drinks_SubMenu();
                     break;
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
-                    ExternalCheque.ChequeConstructorAndSender();
-                    ExternalCheque.ExternalChequeConstructor_Reset();
+                    ChequeDelivery.SendCheque();
+                    ChequeGenerator.ChequeConstructor_Reset();
                     MenuChoice();
                     break;
             }
@@ -113,35 +118,39 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
             switch (ValidationHelper.InputValidationListGeneric(RootFunction.drinks))
             {
                 case 1:
-                    ExternalCheque.ExternalChequeConstructor_AddDrinks(tableIndex, 0);
+                    ChequeGenerator.ChequeConstructor_AddDrinks(tableIndex, 0);
                     ConsoleStringInterpolation.GUI_Drinks_SubMenu();
                     SubMenuDrinksChoice();
                     break;
                 case 2:
-                    ExternalCheque.ExternalChequeConstructor_AddDrinks(tableIndex, 1);
+                    ChequeGenerator.ChequeConstructor_AddDrinks(tableIndex, 1);
                     ConsoleStringInterpolation.GUI_Drinks_SubMenu();
                     SubMenuDrinksChoice();
                     break;
                 case 3:
-                    ExternalCheque.ExternalChequeConstructor_AddDrinks(tableIndex, 2);
+                    ChequeGenerator.ChequeConstructor_AddDrinks(tableIndex, 2);
                     ConsoleStringInterpolation.GUI_Drinks_SubMenu();
                     SubMenuDrinksChoice();
                     break;
                 case 4:
-                    ExternalCheque.ExternalChequeConstructor_AddDrinks(tableIndex, 3);
+                    ChequeGenerator.ChequeConstructor_AddDrinks(tableIndex, 3);
                     ConsoleStringInterpolation.GUI_Drinks_SubMenu();
                     SubMenuDrinksChoice();
                     break;
                 case 5:
-                    ExternalCheque.ExternalChequeConstructor_AddDrinks(tableIndex, 4);
+                    ChequeGenerator.ChequeConstructor_AddDrinks(tableIndex, 4);
                     ConsoleStringInterpolation.GUI_Drinks_SubMenu();
+                    SubMenuDrinksChoice();
+                    break;
+                case 6:
+                    ConsoleStringInterpolation.GUI_Food_SubMenu();
                     SubMenuDrinksChoice();
                     break;
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
-                    ExternalCheque.ChequeConstructorAndSender();
-                    ExternalCheque.ExternalChequeConstructor_Reset();
+                    ChequeDelivery.SendCheque();
+                    ChequeGenerator.ChequeConstructor_Reset();
                     MenuChoice();
                     break;
             }

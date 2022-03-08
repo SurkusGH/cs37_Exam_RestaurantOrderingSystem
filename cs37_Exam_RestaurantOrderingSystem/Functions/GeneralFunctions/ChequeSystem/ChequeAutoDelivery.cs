@@ -1,10 +1,14 @@
-﻿using System;
+﻿using MailKit.Net.Smtp;
 using MimeKit;
-using MailKit.Net.Smtp;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem
 {
-    public class ChequeDelivery : ISendCheque
+    internal class ChequeAutoDelivery : ISendCheque
     {
         public static void SendCheque()
         {
@@ -12,18 +16,18 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSy
             // Tools -> Nuget Package Manager -> Package manager console: pm> Install-Package MailKit
             // Less secure app access (G Account security settings)
             MimeMessage message = new MimeMessage(); // <-- Sukuriu naują message objektą, į kurį talpinsiu datą laiško
-            message.From.Add(new MailboxAddress("C# Čekis", "DotNetSendingEmail@gmail.com")); // <-- šitą dalį gavėjas matys kaip sender lauką
+            message.From.Add(new MailboxAddress("C# Vidinis-Čekis", "DotNetSendingEmail@gmail.com")); // <-- šitą dalį gavėjas matys kaip sender lauką
 
             message.To.Add(MailboxAddress.Parse("V.Surkus@me.com")); // <-- Adresato laukas; parse konvertuoja string'ą į pašto adreso duomenį
             message.To.Add(MailboxAddress.Parse("DotNetSendingEmail@gmail.com"));
 
             message.Subject = $"{DateTime.Today.Year}-{DateTime.Today.Month}-{DateTime.Today.Day} Pirkinys";
 
-            ChequeGenerator.ChequeConstructor_Client();
+            ChequeGenerator.ChequeConstructor_Shop();
 
             message.Body = new TextPart("plain")
             {
-                Text = ChequeGenerator.Cheque
+                Text = ChequeGenerator.InternalCheque
             };
 
             #region (!) SENSITIVE DATA
@@ -54,4 +58,3 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSy
         }
     }
 }
-

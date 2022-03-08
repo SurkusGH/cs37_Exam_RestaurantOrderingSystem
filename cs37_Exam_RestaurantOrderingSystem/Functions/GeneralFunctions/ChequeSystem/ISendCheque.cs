@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem
 {
-    public class InternalCheque
+    internal interface ISendCheque
     {
-
+        public static void SendCheque()
+        {
+        }
     }
 }

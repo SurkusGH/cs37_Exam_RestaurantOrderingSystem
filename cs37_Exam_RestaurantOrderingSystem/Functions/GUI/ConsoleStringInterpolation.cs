@@ -31,7 +31,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Dire
                               $"\n (1) 2-vietis staliukas;    " +
                               $"\n (2) 4-vietis staliukas;    " +
                               $"\n (3) 8-vietis staliukas.    " +
-                              $"\n\n                          ");
+                              $"\n\n (0) Uždaryti kasą.");
         }
 
         public static void GUI_Menu_FoodSelector_TableForTwo()
@@ -78,7 +78,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Dire
                                                                $"{f.Price}, Eur " +
                                                                $"paruošiamas per {f.TimeToPrepare}, " +
                                                                $"patiekalas: {Food_DataType.IsVeganPrintingHelper(f.IsVegan)}"));
-            Console.WriteLine(                                 $"\n (0) Grįžti atgal <<");
+            Console.WriteLine($"\n (6) Rinktis gėrimus");
+            Console.WriteLine(                                 $"\n (0) Baigti užsakymą");
         }
         public static void GUI_Drinks_SubMenu()
         {
@@ -90,7 +91,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Dire
                                                                $"{d.Price}, Eur " +
                                                                $"paruošiamas per {d.TimeToPrepare}, " +
                                                                $"patiekalas yra: {Drinks_DataType.NoSugarPrintingHelper(d.NoSuggar)}"));
-            Console.WriteLine(                                 $"\n (0) Grįžti atgal <<");
+            Console.WriteLine($"\n (6) Rinktis maistą");
+            Console.WriteLine($"\n (0) Baigti užsakymą");
         }   
 
         #endregion
@@ -106,8 +108,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Dire
         public static void PrintExternalCheque()
         {
             Console.WriteLine($"\nČekio preview:");
-            ExternalCheque.externalCheque.ForEach(item => Console.WriteLine(item));
-            Console.WriteLine($"Viso: {ExternalCheque.Sum} Eur\n");
+            ChequeGenerator.externalCheque.ForEach(item => Console.WriteLine(item));
+            Console.WriteLine($"Viso: {ChequeGenerator.Sum} Eur\n");
         }
     }
 }
