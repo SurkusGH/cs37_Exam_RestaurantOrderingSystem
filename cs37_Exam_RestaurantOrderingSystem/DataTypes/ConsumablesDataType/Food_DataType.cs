@@ -17,5 +17,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
             TimeToPrepare = timeToPrepare;
             IsVegan = isVegan;
         }
+        #region DataPrintingHelper
+        public static string IsVeganPrintingHelper(bool check)
+        {
+            if (check) { return "veganiškas"; }
+            else { return "ne veganiškas"; }
+        }
+        #endregion
     }
 }

@@ -6,10 +6,11 @@ using System.Linq;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunctions_Directory
 {
-    public class FileReader
+    public class FileHandler
     {
         #region TableDataManipulation
-        static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
+        //static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
+        static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
         public static List<Table_DataType> ReadTableData()
         {
             var csvLineReader = new StreamReader(tableDataPath);
@@ -51,7 +52,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunction
         #endregion
 
         #region FoodDataManipulation
-        static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
+        //static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
+        static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
         public static List<Food_DataType> ReadFoodData()
         {
             var csvLineReader = new StreamReader(foodDataPath);
@@ -90,7 +92,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunction
         #endregion
 
         #region DrinksDataManipulation
-        static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
+        //static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
+        static string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
         public static List<Drinks_DataType> ReadDrinksData()
         {
             var csvLineReader = new StreamReader(drinksDataPath);

@@ -17,5 +17,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
             TimeToPrepare = timeToPrepare;
             NoSuggar = noSuggar;
         }
+        #region DataPrintingHelper
+        public static string NoSugarPrintingHelper(bool check)
+        {
+            if (check) { return "su cukrumi"; }
+            else { return "be cukraus"; }
+        }
+        #endregion
     }
 }

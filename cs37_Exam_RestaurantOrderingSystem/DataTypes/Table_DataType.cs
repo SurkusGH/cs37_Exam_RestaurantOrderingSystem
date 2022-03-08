@@ -23,7 +23,14 @@ namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
             Orders = orders;
         }
 
-        public static string PrintingHelper(List<string> orders)
+        #region DataPrintingHelpers
+        public static string AvalabilityPrintingHelper(bool check)
+        {
+            if (check){return "Užimtas";}
+            else {return "Neužimtas";}
+        }
+
+        public static string ListPrintingHelper(List<string> orders)
         {
             string temp = "";
             foreach (var item in orders)
@@ -32,5 +39,6 @@ namespace cs37_Exam_RestaurantOrderingSystem.DataType_Directory
             }
             return temp;
         }
+        #endregion
     }
 }

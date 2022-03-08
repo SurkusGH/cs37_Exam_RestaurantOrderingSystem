@@ -42,7 +42,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.G
                               $"\n                            --> (2) Gėrimai" +
                               $"\n                            " +
                               $"\n                            " +
-                              $"\n (0) Grįžti atgal <<");
+                              $"\n (0) Tvirtinti <<");
         }
         public static void GUI_Menu_FoodSelector_TableForFour()
         {
@@ -52,7 +52,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.G
                               $"\n (2) 4-vietis staliukas     --> (1) Maistas" +
                               $"\n                            --> (2) Gėrimai" +
                               $"\n                            " +
-                              $"\n (0) Grįžti atgal <<");
+                              $"\n (0) Tvirtinti <<");
         }
         public static void GUI_Menu_FoodSelector_TableForEight()
         {
@@ -62,7 +62,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.G
                               $"\n                            " +
                               $"\n (3) 2-vietis staliukas     --> (1) Maistas" +
                               $"\n                            --> (2) Gėrimai" +
-                              $"\n (0) Grįžti atgal <<");
+                              $"\n (0) Tvirtinti <<");
         }
         #endregion
 
@@ -71,23 +71,25 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.G
         public static void GUI_Food_SubMenu()
         {
             int indexer = 1;
+            Console.Clear();
             Console.WriteLine($"\n Maisto MENIU:");
             RootFunction.foods.ForEach(f => Console.WriteLine($" ({indexer++}) -> " +
                                                                $"{BarcodeIdentifier.Identifier(f.ID)}, " +
                                                                $"{f.Price}, Eur " +
                                                                $"paruošiamas per {f.TimeToPrepare}, " +
-                                                               $"patiekalas yra veganiškas: {f.IsVegan}"));
+                                                               $"patiekalas: {Food_DataType.IsVeganPrintingHelper(f.IsVegan)}"));
             Console.WriteLine(                                 $"\n (0) Grįžti atgal <<");
         }
         public static void GUI_Drinks_SubMenu()
         {
             int indexer = 1;
+            Console.Clear();
             Console.WriteLine($"\n Gėrymų MENIU:");
             RootFunction.drinks.ForEach(d => Console.WriteLine($" ({indexer++}) -> " +
                                                                $"{BarcodeIdentifier.Identifier(d.ID)}, " +
                                                                $"{d.Price}, Eur " +
                                                                $"paruošiamas per {d.TimeToPrepare}, " +
-                                                               $"patiekalas yra veganiškas: {d.NoSuggar}"));
+                                                               $"patiekalas yra: {Drinks_DataType.NoSugarPrintingHelper(d.NoSuggar)}"));
             Console.WriteLine(                                 $"\n (0) Grįžti atgal <<");
         }   
 
@@ -96,16 +98,16 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory.G
         {
             RootFunction.tables.ForEach(t => Console.WriteLine($"Staliukas #{t.TableID} " +
                                                    $"({t.PeaopleCanBeSeated} kėdės), " +
-                                                   $"yra užimtas: {t.TableTaken}, " +
-                                                   $"Užsakymai: " +
-                                                   $"{Table_DataType.PrintingHelper(t.Orders)} " +
-                                                   $"Suma: {t.OrderSum} Eur \n\n"));
+                                                   $"yra užimtas: {Table_DataType.AvalabilityPrintingHelper(t.TableTaken)}, " +
+                                                   $"\nUžsakymai: " +
+                                                   $"{Table_DataType.ListPrintingHelper(t.Orders)} " +
+                                                   $"\nSUMA: {t.OrderSum} Eur \n\n"));
         }
         public static void PrintExternalCheque()
         {
-            Console.WriteLine($"\nČekio preview:\n");
+            Console.WriteLine($"\nČekio preview:");
             ExternalCheque.externalCheque.ForEach(item => Console.WriteLine(item));
-            Console.WriteLine($"\nViso: {RootFunction.tables[FunctionCalls.tableIndex].OrderSum} Eur");
+            Console.WriteLine($"Viso: {RootFunction.tables[FunctionCalls.tableIndex].OrderSum} Eur\n");
         }
     }
 }

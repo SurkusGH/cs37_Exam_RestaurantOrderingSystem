@@ -11,9 +11,9 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_Directory.Functions_Directory
 {
     public class RootFunction
     {
-        public static List<Table_DataType> tables = FileReader.ReadTableData();
-        public static List<Food_DataType> foods = FileReader.ReadFoodData();
-        public static List<Drinks_DataType> drinks = FileReader.ReadDrinksData();
+        public static List<Table_DataType> tables = FileHandler.ReadTableData();
+        public static List<Food_DataType> foods = FileHandler.ReadFoodData();
+        public static List<Drinks_DataType> drinks = FileHandler.ReadDrinksData();
         public static void RunProgram()
         {
 

@@ -23,7 +23,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions_Directory.GeneralFunction
                 2003 => "Kava",
                 2004 => "Kokteilis",
                 2005 => "Cola",
-                _ => "404"
+                _ => "404 - (!) Prekė nerasta."
             };
         }
     }
