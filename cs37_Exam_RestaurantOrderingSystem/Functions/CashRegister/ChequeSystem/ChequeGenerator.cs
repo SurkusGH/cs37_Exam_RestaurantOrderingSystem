@@ -80,14 +80,14 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 
         public static void IsCheckSentToUser()
         {
-            Console.WriteLine("\n(?) Ar klientas nori čekio?");
+            Console.WriteLine("\n(?) Ar klientas nori čekio (Y/N)?");
             switch (ValidationHelper.LetterInputValidation())
             {
                 case "y":
                     ChequeConstructor_Client();
                     ChequeDelivery.SendCheque();
-                    Console.WriteLine("\n\n(!) Cheque -> sent");
-                    ChequeGenerator.ChequeConstructor_Reset();
+                    Console.WriteLine("\n\n(!) Čekis -> išsiųstas");
+                    ChequeConstructor_Reset();
                     Thread.Sleep(2000);
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
@@ -95,8 +95,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 
                     break;
                 case "n":
-                    Console.WriteLine("\n\n(X) Cheque -> is NOT sent");
-                    ChequeGenerator.ChequeConstructor_Reset();
+                    Console.WriteLine("\n\n(X) Čekis -> nesiųstas");
+                    ChequeConstructor_Reset();
                     Thread.Sleep(2000);
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();

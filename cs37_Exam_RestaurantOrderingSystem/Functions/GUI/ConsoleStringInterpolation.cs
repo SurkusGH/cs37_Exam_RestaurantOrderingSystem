@@ -33,7 +33,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                               $"\n (2) 4-vietis staliukas;    " +
                               $"\n (3) 8-vietis staliukas.    " +
                               $"\n (4) Atlaisvinti staliuką." +
-                              $"\n\n (0) Uždaryti kasą.");
+                              $"\n\n (0) Uždaryti kasą.\n");
         }
 
         public static void GUI_Menu_FoodSelector_TableForTwo()
@@ -44,7 +44,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                               $"\n                            --> (2) Gėrimai" +
                               $"\n                            " +
                               $"\n                            " +
-                              $"\n (0) Tvirtinti <<");
+                              $"\n (0) Grįžti <--");
         }
         public static void GUI_Menu_FoodSelector_TableForFour()
         {
@@ -54,7 +54,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                               $"\n (2) 4-vietis staliukas     --> (1) Maistas" +
                               $"\n                            --> (2) Gėrimai" +
                               $"\n                            " +
-                              $"\n (0) Tvirtinti <<");
+                              $"\n (0) Grįžti <--");
         }
         public static void GUI_Menu_FoodSelector_TableForEight()
         {
@@ -64,7 +64,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                               $"\n                            " +
                               $"\n (3) 2-vietis staliukas     --> (1) Maistas" +
                               $"\n                            --> (2) Gėrimai" +
-                              $"\n (0) Tvirtinti <<");
+                              $"\n (0) Grįžti <--");
         }
         #endregion
 
@@ -76,12 +76,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
             Console.Clear();
             Console.WriteLine($"\n Maisto MENIU:");
             RootFunction.foods.ForEach(f => Console.WriteLine($" ({indexer++}) -> " +
-                                                               $"{BarcodeIdentifier.Identifier(f.ID)}, " +
-                                                               $"{f.Price}, Eur " +
-                                                               $"paruošiamas per {f.TimeToPrepare}, " +
-                                                               $"patiekalas: {Food_DataType.IsVeganPrintingHelper(f.IsVegan)}"));
-            Console.WriteLine($"\n (6) Rinktis gėrimus");
-            Console.WriteLine(                                 $"\n (0) Baigti užsakymą");
+                                                              $"{BarcodeIdentifier.Identifier(f.ID)}, " +
+                                                              $"{f.Price}, Eur " +
+                                                              $"paruošiamas per {f.TimeToPrepare}, " +
+                                                              $"patiekalas: {Food_DataType.IsVeganPrintingHelper(f.IsVegan)}"));
+                                            Console.WriteLine($"\n (6) -> Pereiti į gėrymų meniu <-");
+                                            Console.WriteLine($"\n (0) Baigti užsakymą");
         }
         public static void GUI_Drinks_SubMenu()
         {
@@ -93,8 +93,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                                                                $"{d.Price}, Eur " +
                                                                $"paruošiamas per {d.TimeToPrepare}, " +
                                                                $"patiekalas yra: {Drinks_DataType.NoSugarPrintingHelper(d.NoSuggar)}"));
-            Console.WriteLine($"\n (6) Rinktis maistą");
-            Console.WriteLine($"\n (0) Baigti užsakymą");
+                                             Console.WriteLine($"\n (6) -> Pereiti į maisto meniu <-");
+                                             Console.WriteLine($"\n (0) Baigti užsakymą");
         }   
 
         #endregion
@@ -107,11 +107,11 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                                                    $"{Table_DataType.ListPrintingHelper(t.Orders)} " +
                                                    $"\nSUMA: {t.OrderSum} Eur \n\n"));
         }
-        public static void PrintExternalCheque()
+        public static void PrintCheckPreview()
         {
             Console.WriteLine($"\nČekio preview:");
             ChequeGenerator.externalCheque.ForEach(item => Console.WriteLine(item));
-            Console.WriteLine($"Viso: {ChequeGenerator.Sum} Eur\n");
+            Console.WriteLine($"Viso: {ChequeGenerator.Sum} Eur\n\n");
         }
     }
 }

@@ -22,6 +22,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
             {
                 case 1:
                     ConsoleStringInterpolation.GUI_Menu_FoodSelector_TableForTwo();
+                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
                     tableIndex = 2;
                     TableAllocation.TableIndexer();
                     TableAllocation.TableAvailabilityCheck(tableIndex);
@@ -29,6 +30,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     break;
                 case 2:
                     ConsoleStringInterpolation.GUI_Menu_FoodSelector_TableForFour();
+                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
                     tableIndex = 4;
                     TableAllocation.TableIndexer();
                     TableAllocation.TableAvailabilityCheck(tableIndex);
@@ -36,6 +38,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     break;
                 case 3:
                     ConsoleStringInterpolation.GUI_Menu_FoodSelector_TableForEight();
+                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
                     tableIndex = 8;
                     TableAllocation.TableIndexer();
                     TableAllocation.TableAvailabilityCheck(tableIndex);
@@ -43,6 +46,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     break;
                 case 4:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
+                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
                     TableAllocation.TableAvailabilityChange();
                     SubMenuChoice();
                     break;
@@ -50,7 +54,6 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     ChequeAutoDelivery_Shop.SendCheque();
                     Environment.Exit(0);
-                    MenuChoice();
                     break;
             }
         }
@@ -73,12 +76,11 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     
             }
         }
-
         public static void SubMenuFoodChoice()
         {
-            ConsoleStringInterpolation.PrintExternalCheque();
+            ConsoleStringInterpolation.PrintCheckPreview();
             ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
-            switch (ValidationHelper.InputValidationListGeneric(RootFunction.foods))
+            switch (ValidationHelper.InputValidation(6))
             {
                 case 1:
                     ChequeGenerator.ChequeConstructor_AddFood(tableIndex, 0);
@@ -106,14 +108,14 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     SubMenuFoodChoice();
                     break;
                 case 6:
-                    SubMenuDrinksChoice();
                     ConsoleStringInterpolation.GUI_Drinks_SubMenu();
+                    SubMenuDrinksChoice();
+                    
                     break;
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
                     ChequeGenerator.IsCheckSentToUser();
-                    // ChequeDelivery.SendCheque(); <--
                     ChequeGenerator.ChequeConstructor_Reset();
                     MenuChoice();
                     break;
@@ -121,9 +123,9 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
         }
         public static void SubMenuDrinksChoice()
         {
-            ConsoleStringInterpolation.PrintExternalCheque();
+            ConsoleStringInterpolation.PrintCheckPreview();
             ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
-            switch (ValidationHelper.InputValidationListGeneric(RootFunction.drinks))
+            switch (ValidationHelper.InputValidation(6))
             {
                 case 1:
                     ChequeGenerator.ChequeConstructor_AddDrinks(tableIndex, 0);
@@ -152,7 +154,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     break;
                 case 6:
                     ConsoleStringInterpolation.GUI_Food_SubMenu();
-                    SubMenuDrinksChoice();
+                    SubMenuFoodChoice();
                     break;
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();

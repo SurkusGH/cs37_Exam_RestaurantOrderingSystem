@@ -20,8 +20,6 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSy
 
             message.Subject = $"{DateTime.Today.Year}-{DateTime.Today.Month}-{DateTime.Today.Day} Pirkinys";
 
-            ChequeGenerator.ChequeConstructor_Client();
-
             message.Body = new TextPart("plain")
             {
                 Text = ChequeGenerator.Cheque

@@ -62,6 +62,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             Console.WriteLine("Kūrį staliuką iš jų norėtumėte atlaisvinti?");
             var input = ValidationHelper.InputValidationListGeneric(RootFunction.tables);
             RootFunction.tables[input-1].TableTaken = false;
+            RootFunction.tables[input - 1].Orders.Clear();
             Console.WriteLine($"\n\n(!) Staliukas #{RootFunction.tables[input - 1].TableID} yra atlaisvinamas");
             Thread.Sleep(2000);
             ConsoleStringInterpolation.GUI_Menu_TableSelector();
