@@ -1,4 +1,5 @@
-﻿using MailKit.Net.Smtp;
+﻿using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
+using MailKit.Net.Smtp;
 using MimeKit;
 using System;
 using System.Collections.Generic;
@@ -6,9 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem
+namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 {
-    internal class ChequeAutoDelivery : ISendCheque
+    internal class ChequeAutoDelivery_Shop : ISendCheque
     {
         public static void SendCheque()
         {

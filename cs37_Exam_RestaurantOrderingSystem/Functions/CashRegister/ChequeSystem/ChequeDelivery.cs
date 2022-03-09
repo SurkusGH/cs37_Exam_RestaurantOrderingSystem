@@ -1,6 +1,7 @@
 ﻿using System;
 using MimeKit;
 using MailKit.Net.Smtp;
+using cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem
 {

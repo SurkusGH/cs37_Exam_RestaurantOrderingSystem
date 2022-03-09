@@ -1,13 +1,14 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI;
 using cs37_Exam_RestaurantOrderingSystem.DataType;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory;
+using cs37_Exam_RestaurantOrderingSystem.Functions;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions
 {
     public class RootFunction
     {

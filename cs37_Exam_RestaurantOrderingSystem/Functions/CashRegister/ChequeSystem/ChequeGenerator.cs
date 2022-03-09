@@ -1,4 +1,4 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
 using System;
@@ -6,9 +6,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory;
 
-namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem
+namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 {
     public class ChequeGenerator
     {
@@ -77,7 +76,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSy
             foreach (var item in sortedFoodList) { InternalCheque += $"\nitem {item.ID} - sold: {item.ItemsSold}"; }
             var sortedDrinksList = RootFunction.drinks.Where(d => d.ItemsSold > 0);
             foreach (var item in sortedDrinksList){ InternalCheque += $"\nitem {item.ID} - sold: {item.ItemsSold}"; }
-            InternalCheque += $"Apyvarta: {Turnover}";
+            InternalCheque += $"\nApyvarta: {Turnover} Eur";
         }
     }
 }

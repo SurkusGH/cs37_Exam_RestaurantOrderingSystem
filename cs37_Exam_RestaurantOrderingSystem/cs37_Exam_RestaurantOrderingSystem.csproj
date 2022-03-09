@@ -10,4 +10,14 @@
     <PackageReference Include="MimeKit" Version="3.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Functions\CashRegister\" />
+    <None Remove="Functions\CashRegister\SalesHistory\" />
+    <None Remove="Functions\CashRegister\ChequeSystem\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Functions\CashRegister\" />
+    <Folder Include="Functions\CashRegister\SalesHistory\" />
+    <Folder Include="Functions\CashRegister\ChequeSystem\" />
+  </ItemGroup>
 </Project>

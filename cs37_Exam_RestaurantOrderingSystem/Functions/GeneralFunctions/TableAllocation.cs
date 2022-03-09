@@ -1,5 +1,5 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory;
-using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
+using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI;
 using cs37_Exam_RestaurantOrderingSystem.DataType;
 using System;
 using System.Collections.Generic;
@@ -48,6 +48,19 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
         public static void SetTableAsTaken()
         {
             RootFunction.tables.Where(t => t.PeaopleCanBeSeated == TableIndexer()).Where(t => t.TableTaken == false).First(t => t.TableTaken = true);
+        }
+
+        public static void PrintTableAvailability() // <-- perkelti?
+        {
+            var takenTables = (RootFunction.tables.Where(t => t.TableTaken == true));
+            Console.WriteLine("Užimti staliukai:");
+            foreach (var item in takenTables)
+            {
+                Console.WriteLine($"{RootFunction.tables.IndexOf(item)+1} yra { Table_DataType.AvalabilityPrintingHelper(item.TableTaken)}");
+            }
+            Console.WriteLine("Kūrį staliuką iš jų norėtumėte atlaisvinti?");
+            var input = ValidationHelper.InputValidation(6);
+            RootFunction.tables[input-1].TableTaken = false;
         }
     }
 }

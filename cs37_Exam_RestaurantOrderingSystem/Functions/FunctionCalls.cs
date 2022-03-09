@@ -1,15 +1,16 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI;
 using cs37_Exam_RestaurantOrderingSystem.DataType;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem;
+using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.Functions
 {
     public class FunctionCalls
     {
@@ -17,7 +18,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
         public static void MenuChoice()
         {
 
-            switch (ValidationHelper.InputValidation(3))
+            switch (ValidationHelper.InputValidation(4))
             {
                 case 1:
                     ConsoleStringInterpolation.GUI_Menu_FoodSelector_TableForTwo();
@@ -40,9 +41,15 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory
                     TableAllocation.TableAvailabilityCheck(tableIndex);
                     SubMenuChoice();
                     break;
+                case 4:
+                    ConsoleStringInterpolation.GUI_Menu_TableSelector();
+                    TableAllocation.PrintTableAvailability();
+                    SubMenuChoice();
+                    break;
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
-                    ChequeAutoDelivery.SendCheque();
+                    ChequeAutoDelivery_Shop.SendCheque();
+                    Environment.Exit(0);
                     MenuChoice();
                     break;
             }

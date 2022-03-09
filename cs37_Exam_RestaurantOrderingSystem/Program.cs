@@ -1,4 +1,4 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory;
+﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
 using System;
 
 namespace cs37_Exam_RestaurantOrderingSystem

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
 {
     public class BarcodeIdentifier
     {

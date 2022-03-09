@@ -1,13 +1,14 @@
 ﻿using cs37_Exam_RestaurantOrderingSystem.DataType;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions_Directory;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Directory
+namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI
 {
     public class ConsoleStringInterpolation
     {
@@ -31,6 +32,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions_Directory.GUI_Dire
                               $"\n (1) 2-vietis staliukas;    " +
                               $"\n (2) 4-vietis staliukas;    " +
                               $"\n (3) 8-vietis staliukas.    " +
+                              $"\n (4) Atlaisvinti staliuką." +
                               $"\n\n (0) Uždaryti kasą.");
         }
 
