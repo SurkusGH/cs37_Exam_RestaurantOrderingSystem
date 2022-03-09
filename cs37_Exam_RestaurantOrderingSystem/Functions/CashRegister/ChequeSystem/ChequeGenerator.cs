@@ -1,11 +1,10 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
+﻿using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GUI;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 {
@@ -77,6 +76,34 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             var sortedDrinksList = RootFunction.drinks.Where(d => d.ItemsSold > 0);
             foreach (var item in sortedDrinksList){ InternalCheque += $"\nitem {item.ID} - sold: {item.ItemsSold}"; }
             InternalCheque += $"\nApyvarta: {Turnover} Eur";
+        }
+
+        public static void IsCheckSentToUser()
+        {
+            Console.WriteLine("\n(?) Ar klientas nori čekio?");
+            switch (ValidationHelper.LetterInputValidation())
+            {
+                case "y":
+                    ChequeConstructor_Client();
+                    ChequeDelivery.SendCheque();
+                    Console.WriteLine("\n\n(!) Cheque -> sent");
+                    ChequeGenerator.ChequeConstructor_Reset();
+                    Thread.Sleep(2000);
+                    ConsoleStringInterpolation.GUI_Menu_TableSelector();
+                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
+                    FunctionCalls.MenuChoice();
+
+                    break;
+                case "n":
+                    Console.WriteLine("\n\n(X) Cheque -> is NOT sent");
+                    ChequeGenerator.ChequeConstructor_Reset();
+                    Thread.Sleep(2000);
+                    ConsoleStringInterpolation.GUI_Menu_TableSelector();
+                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
+                    FunctionCalls.MenuChoice();
+                    break;
+            }
+
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI;
+﻿using cs37_Exam_RestaurantOrderingSystem.Functions.GUI;
 using cs37_Exam_RestaurantOrderingSystem.DataType;
 using cs37_Exam_RestaurantOrderingSystem.Functions;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions
+namespace cs37_Exam_RestaurantOrderingSystem.Functions
 {
     public class RootFunction
     {

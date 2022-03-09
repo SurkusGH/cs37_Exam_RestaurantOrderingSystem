@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem;
 
-namespace cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI
+namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
 {
     public class ConsoleStringInterpolation
     {

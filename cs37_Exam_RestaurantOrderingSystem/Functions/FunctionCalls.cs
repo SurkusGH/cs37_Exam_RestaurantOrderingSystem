@@ -1,4 +1,4 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI;
+﻿using cs37_Exam_RestaurantOrderingSystem.Functions.GUI;
 using cs37_Exam_RestaurantOrderingSystem.DataType;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem;
-using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
+using cs37_Exam_RestaurantOrderingSystem.Functions;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions
 {
@@ -43,7 +43,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     break;
                 case 4:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
-                    TableAllocation.PrintTableAvailability();
+                    TableAllocation.TableAvailabilityChange();
                     SubMenuChoice();
                     break;
                 case 0:
@@ -112,7 +112,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
-                    ChequeDelivery.SendCheque();
+                    ChequeGenerator.IsCheckSentToUser();
+                    // ChequeDelivery.SendCheque(); <--
                     ChequeGenerator.ChequeConstructor_Reset();
                     MenuChoice();
                     break;
@@ -156,8 +157,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                 case 0:
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
-                    ChequeDelivery.SendCheque();
-                    ChequeGenerator.ChequeConstructor_Reset();
+                    ChequeGenerator.IsCheckSentToUser();
                     MenuChoice();
                     break;
             }

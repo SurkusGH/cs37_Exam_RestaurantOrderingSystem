@@ -1,11 +1,12 @@
-﻿using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions;
-using cs37_Exam_RestaurantOrderingSystem.CSV_DB.Functions.GUI;
+﻿using cs37_Exam_RestaurantOrderingSystem.Functions;
+using cs37_Exam_RestaurantOrderingSystem.Functions.GUI;
 using cs37_Exam_RestaurantOrderingSystem.DataType;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
 {
@@ -50,17 +51,22 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             RootFunction.tables.Where(t => t.PeaopleCanBeSeated == TableIndexer()).Where(t => t.TableTaken == false).First(t => t.TableTaken = true);
         }
 
-        public static void PrintTableAvailability() // <-- perkelti?
+        public static void TableAvailabilityChange() // <-- perkelti?
         {
             var takenTables = (RootFunction.tables.Where(t => t.TableTaken == true));
             Console.WriteLine("Užimti staliukai:");
             foreach (var item in takenTables)
             {
-                Console.WriteLine($"{RootFunction.tables.IndexOf(item)+1} yra { Table_DataType.AvalabilityPrintingHelper(item.TableTaken)}");
+                Console.WriteLine($"#{RootFunction.tables.IndexOf(item)+1} yra { Table_DataType.AvalabilityPrintingHelper(item.TableTaken)}");
             }
             Console.WriteLine("Kūrį staliuką iš jų norėtumėte atlaisvinti?");
-            var input = ValidationHelper.InputValidation(6);
+            var input = ValidationHelper.InputValidationListGeneric(RootFunction.tables);
             RootFunction.tables[input-1].TableTaken = false;
+            Console.WriteLine($"\n\n(!) Staliukas #{RootFunction.tables[input - 1].TableID} yra atlaisvinamas");
+            Thread.Sleep(2000);
+            ConsoleStringInterpolation.GUI_Menu_TableSelector();
+            ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
+            FunctionCalls.MenuChoice();
         }
     }
 }

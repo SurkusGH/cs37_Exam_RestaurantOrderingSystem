@@ -10,13 +10,13 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
     {
         #region PathsForFiles_WinOS_MacOS
         //WinOS
-        //static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
-        //static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
-        //static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
+        static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
+        static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
+        static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
         //MacOS
-        static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
-        static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
-        static string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
+        //static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
+        //static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
+        //static string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
         #endregion
 
         #region TableDataManipulation
