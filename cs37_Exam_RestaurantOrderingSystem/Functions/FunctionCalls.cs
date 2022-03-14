@@ -1,20 +1,16 @@
 ﻿using cs37_Exam_RestaurantOrderingSystem.Functions.GUI;
-using cs37_Exam_RestaurantOrderingSystem.DataType;
 using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSystem;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem;
-using cs37_Exam_RestaurantOrderingSystem.Functions;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions
 {
     public class FunctionCalls
     {
+        #region GLOBALS
         public static int tableIndex = 0;
+        #endregion
+
         public static void MenuChoice()
         {
 

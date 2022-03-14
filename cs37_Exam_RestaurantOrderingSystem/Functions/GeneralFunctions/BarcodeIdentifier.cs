@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
+﻿namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
 {
     public class BarcodeIdentifier
     {
+        /// <summary>
+        /// This method identyfies items by their 4-digit pseudo-barcode
+        /// </summary>
+        /// <param name="ID"></param>
+        /// <returns></returns>
         public static string Identifier(int ID)
         {
             return ID switch

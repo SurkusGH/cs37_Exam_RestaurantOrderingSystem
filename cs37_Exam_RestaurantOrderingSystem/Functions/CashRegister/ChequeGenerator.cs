@@ -11,7 +11,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
     public class ChequeGenerator
     {
 
-        #region Globals
+        #region GLOBALS
         public static List<string> externalCheque = new List<string>();
         public static string Cheque;
         public static string InternalCheque;
@@ -19,9 +19,14 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
         public static decimal Turnover = 0;
         #endregion 
 
+        /// <summary>
+        /// This method adds indicated food to selected table
+        /// Additionally: calculates order Sum and generates string for cheque to be sent
+        /// </summary>
+        /// <param Indicates to which table food is assigned="tableIndex"></param>
+        /// <param Indicates which food is assigned="index"></param>
         public static void ChequeConstructor_AddFood(int tableIndex, int index)
         {
-            //RootFunction.tables.IndexOf(TableAllocation.AutomaticTableSelector(index));
             string tempString = $"{ BarcodeIdentifier.Identifier(RootFunction.foods[index].ID)} @ " +
                                 $"{ RootFunction.foods[index].Price } Eur";
 
@@ -35,6 +40,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             Sum = RootFunction.tables[RootFunction.tables.IndexOf(TableAllocation.AutomaticTableSelector(tableIndex))].OrderSum;
 
         }
+        /// <summary>
+        /// This method adds indicated drink to selected table
+        /// Additionally: calculates order Sum and generates string for cheque to be sent
+        /// </summary>
+        /// <param Indicates to which table drink is assigned="tableIndex"></param>
+        /// <param Indicates which drink is assigned="index"></param>
         public static void ChequeConstructor_AddDrinks(int tableIndex, int index)
         {
             string tempString = $"{ BarcodeIdentifier.Identifier(RootFunction.drinks[index].ID)} @ " +
@@ -49,6 +60,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             Sum = RootFunction.tables[RootFunction.tables.IndexOf(TableAllocation.AutomaticTableSelector(tableIndex))].OrderSum;
 
         }
+
+        /// <summary>
+        /// This method calculates total money spent over an instance of program
+        /// Writes cheque data to txt file
+        /// Additionally: resets Global variable values, for re-using
+        /// </summary>
         public static void ChequeConstructor_RecordAndReset()
         {
             Turnover += Sum;
@@ -57,6 +74,10 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             Cheque = "";
             Sum = 0;
         }
+
+        /// <summary>
+        /// This method constructs Cheque (consumer) from data accumulated by methods above
+        /// </summary>
         public static void ChequeConstructor_Client()
         {
             int index = 1;
@@ -72,6 +93,9 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             Cheque += "\n";
         }
 
+        /// <summary>
+        /// This method constructs Cheque (shop) from data accumulated by methods above
+        /// </summary>
         public static void ChequeConstructor_Shop()
         {
             InternalCheque += $"\nParduotos prekės:";
@@ -84,6 +108,10 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             FileHandler.WriteSummaryToHistory(InternalCheque);
         }
 
+        /// <summary>
+        /// This is binary method, that inquires if check is to be sent to consumer
+        /// Additionally it is one of the main intersections of the code that is generally executed
+        /// </summary>
         public static void IsCheckSentToUser()
         {
             Console.WriteLine("\n(?) Ar klientas nori čekio (Y/N)?");
@@ -92,21 +120,20 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
                 case "y":
                     ChequeConstructor_Client();
                     ChequeDelivery.SendCheque();
-                    Console.WriteLine("\n\n(!) Čekis -> išsiųstas");
+                    Console.WriteLine("\n\n(!) Čekis -> IŠSIŲSTAS");
                     ChequeConstructor_RecordAndReset();
                     Thread.Sleep(2000);
-                    ConsoleStringInterpolation.GUI_Menu_TableSelector();
-                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
-                    FunctionCalls.MenuChoice();
 
+                    RootFunction.MainMenu();
                     break;
+
                 case "n":
-                    Console.WriteLine("\n\n(X) Čekis -> nesiųstas");
+                    Console.WriteLine("\n\n(!) Čekis -> NEIŠSIŲSTAS");
+                    ChequeConstructor_Client();
                     ChequeConstructor_RecordAndReset();
                     Thread.Sleep(2000);
-                    ConsoleStringInterpolation.GUI_Menu_TableSelector();
-                    ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
-                    FunctionCalls.MenuChoice();
+
+                    RootFunction.MainMenu();
                     break;
             }
 

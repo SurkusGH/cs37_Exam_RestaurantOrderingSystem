@@ -1,49 +1,94 @@
 
-----------
-(!) KASA Atidaryta: 2022-3-14, 12:59
- Prekė #1: Mėsainis @ 9.99 Eur
- Prekė #2: Mėsainis @ 9.99 Eur
- Prekė #3: Cola @ 0.99 Eur
- Prekė #4: Cola @ 0.99 Eur
-Mokėtina suma: 21.96 Eur
-Čekio data: 2022-3-14, 13:0 
+++++++++++
+(!) KASA ATIDARYTA: 2022-3-14, 14:56
+ Prekė #1: Kievo kotletas @ 13.99 Eur
+ Prekė #2: Kievo kotletas @ 13.99 Eur
+ Prekė #3: Vanduo @ 0.99 Eur
+ Prekė #4: Vanduo @ 0.99 Eur
+ Prekė #5: Arbata @ 1.99 Eur
+ Prekė #6: Kava @ 2.99 Eur
+Mokėtina suma: 34.94 Eur
+Čekio data: 2022-3-14, 14:56 
 
 
  Prekė #1: Pica @ 11.99 Eur
  Prekė #2: Pica @ 11.99 Eur
- Prekė #3: Pica @ 11.99 Eur
- Prekė #4: Pica @ 11.99 Eur
- Prekė #5: Vanduo @ 0.99 Eur
- Prekė #6: Vanduo @ 0.99 Eur
+ Prekė #3: Vegan item #1 @ 8.99 Eur
+ Prekė #4: Vegan item #2 @ 10.99 Eur
+ Prekė #5: Kava @ 2.99 Eur
+ Prekė #6: Kava @ 2.99 Eur
  Prekė #7: Vanduo @ 0.99 Eur
  Prekė #8: Vanduo @ 0.99 Eur
 Mokėtina suma: 51.92 Eur
-Čekio data: 2022-3-14, 13:1 
+Čekio data: 2022-3-14, 14:57 
 
 
- Prekė #1: Kava @ 2.99 Eur
- Prekė #2: Kava @ 2.99 Eur
- Prekė #3: Kava @ 2.99 Eur
- Prekė #4: Kava @ 2.99 Eur
- Prekė #5: Kava @ 2.99 Eur
-Mokėtina suma: 14.95 Eur
-Čekio data: 2022-3-14, 13:1 
+ Prekė #1: Mėsainis @ 9.99 Eur
+ Prekė #2: Mėsainis @ 9.99 Eur
+ Prekė #3: Vanduo @ 0.99 Eur
+ Prekė #4: Vanduo @ 0.99 Eur
+Mokėtina suma: 21.96 Eur
+Čekio data: 2022-3-14, 14:58 
 
 
 Parduotos prekės:
 item 1001 - sold: 2
-item 1003 - sold: 4
-item 2001 - sold: 4
-item 2003 - sold: 5
-item 2004 - sold: 4
-item 2005 - sold: 2
-Apyvarta: 104.79 Eur
+item 1002 - sold: 2
+item 1003 - sold: 2
+item 1004 - sold: 1
+item 1005 - sold: 1
+item 2001 - sold: 6
+item 2002 - sold: 1
+item 2003 - sold: 3
+Apyvarta: 108.82 Eur
 ----------
-(!) KASA UŽDARYTA: 2022-3-14, 13:2
-----------
-(!) KASA Atidaryta: 2022-3-14, 13:3
+(!) KASA UŽDARYTA: 2022-3-14, 14:58
 ++++++++++
-(!) KASA ATIDARYTA: 2022-3-14, 13:4Parduotos prekės:
-Apyvarta: 0 Eur
+(!) KASA ATIDARYTA: 2022-3-14, 15:0
+ Prekė #1: Mėsainis @ 9.99 Eur
+Mokėtina suma: 9.99 Eur
+Čekio data: 2022-3-14, 15:0 
+
+
+ Prekė #1: Mėsainis @ 9.99 Eur
+Mokėtina suma: 9.99 Eur
+Čekio data: 2022-3-14, 15:0 
+
+
+ Prekė #1: Kievo kotletas @ 13.99 Eur
+Mokėtina suma: 13.99 Eur
+Čekio data: 2022-3-14, 15:0 
+
+
+ Prekė #1: Mėsainis @ 9.99 Eur
+ Prekė #2: Kievo kotletas @ 13.99 Eur
+ Prekė #3: Pica @ 11.99 Eur
+ Prekė #4: Vegan item #1 @ 8.99 Eur
+ Prekė #5: Vegan item #2 @ 10.99 Eur
+ Prekė #6: Vanduo @ 0.99 Eur
+ Prekė #7: Vanduo @ 0.99 Eur
+Mokėtina suma: 57.93 Eur
+Čekio data: 2022-3-14, 15:1 
+
+
+Parduotos prekės:
+item 1001 - sold: 3
+item 1002 - sold: 2
+item 1003 - sold: 1
+item 1004 - sold: 1
+item 1005 - sold: 1
+item 2001 - sold: 2
+Apyvarta: 91.90 Eur
 ----------
-(!) KASA UŽDARYTA: 2022-3-14, 13:4
+(!) KASA UŽDARYTA: 2022-3-14, 15:1
+++++++++++
+(!) KASA ATIDARYTA: 2022-3-14, 15:2
+ Prekė #1: Mėsainis @ 9.99 Eur
+Mokėtina suma: 9.99 Eur
+Čekio data: 2022-3-14, 15:3 
+
+
+ Prekė #1: Kievo kotletas @ 13.99 Eur
+Mokėtina suma: 13.99 Eur
+Čekio data: 2022-3-14, 15:3 
+

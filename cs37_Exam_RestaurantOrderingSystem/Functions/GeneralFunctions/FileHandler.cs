@@ -1,5 +1,4 @@
 ﻿using cs37_Exam_RestaurantOrderingSystem.DataType;
-using cs37_Exam_RestaurantOrderingSystem.DataTypes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -11,17 +10,23 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
     {
         #region PathsForFiles_WinOS_MacOS
         //WinOS
-        static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
-        static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
-        static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
-        static string historyDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\History.txt";
+        static readonly string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
+        static readonly string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
+        static readonly string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
+        static readonly string historyDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\History.txt";
         //MacOS
-        //static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
-        //static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
-        //static string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
+        //static readonly string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
+        //static readonly string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
+        //static readonly string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Drinks.csv";
+        //static readonly string drinksDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/History.txt";
         #endregion
 
         #region TableDataManipulation
+
+        /// <summary>
+        /// This method reads Table_DataType formated CSV file
+        /// </summary>
+        /// <returns></returns>
         public static List<Table_DataType> ReadTableData()
         {
             var csvLineReader = new StreamReader(tableDataPath);
@@ -38,6 +43,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             csvLineReader.Close();
             return tableData;
         }
+
+        /// <summary>
+        /// This method allocates values separated by comma to custom data fields
+        /// </summary>
+        /// <param name="tempCache"></param>
+        /// <returns></returns>
         public static Table_DataType TableDataParserHelper(string[] tempCache)
         {
             var table = new Table_DataType();
@@ -49,6 +60,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
 
             return table;
         }
+
+        /// <summary>
+        /// This method is unused
+        /// This method writes data in custom manner, enableing method ReadTableData() to read and allocate values
+        /// </summary>
+        /// <param name="tableList"></param>
         public static void WriteTableData(List<Table_DataType> tableList) // <-- metodas nenaudojamas
         {
             string tempString = "";
@@ -60,9 +77,15 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
                                                                              $"{tempString = string.Join("> ", tableData.Orders.ToArray())}" +
                                                                              Environment.NewLine));
         }
+
         #endregion
 
         #region FoodDataManipulation
+
+        /// <summary>
+        /// This method reads Food_DataType formated CSV file
+        /// </summary>
+        /// <returns></returns>
         public static List<Food_DataType> ReadFoodData()
         {
             var csvLineReader = new StreamReader(foodDataPath);
@@ -79,6 +102,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             csvLineReader.Close();
             return foodData;
         }
+
+        /// <summary>
+        /// This method allocates values separated by comma to custom data fields
+        /// </summary>
+        /// <param name="tempCache"></param>
+        /// <returns></returns>
         public static Food_DataType FoodDataParserHelper(string[] tempCache)
         {
             var food = new Food_DataType();
@@ -90,6 +119,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
 
             return food;
         }
+
+        /// <summary>
+        /// This method is unused
+        /// This method writes data in custom manner, enableing method ReadFoodData() to read and allocate values
+        /// </summary>
+        /// <param name="tableList"></param>
         public static void WriteFoodData(List<Food_DataType> foodList) // <-- metodas nenaudojamas
         {
             File.WriteAllText(foodDataPath, string.Empty); // <-- išvalau rinkmeną, pridedu modifikuotą kontentą
@@ -103,6 +138,11 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
         #endregion
 
         #region DrinksDataManipulation
+
+        /// <summary>
+        /// This method reads Drinks_DataType formated CSV file
+        /// </summary>
+        /// <returns></returns>
         public static List<Drinks_DataType> ReadDrinksData()
         {
             var csvLineReader = new StreamReader(drinksDataPath);
@@ -119,6 +159,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             csvLineReader.Close();
             return drinksData;
         }
+
+        /// <summary>
+        /// This method allocates values separated by comma to custom data fields
+        /// </summary>
+        /// <param name="tempCache"></param>
+        /// <returns></returns>
         public static Drinks_DataType DrinksDataParserHelper(string[] tempCache)
         {
             var drink = new Drinks_DataType();
@@ -130,6 +176,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
 
             return drink;
         }
+
+        /// This method writes data in custom manner, enableing method ReadDrinksData() to read and allocate values
         public static void WriteDrinksData(List<Drinks_DataType> drinksList) // <-- metodas nenaudojamas
         {
             File.WriteAllText(drinksDataPath, string.Empty); // <-- išvalau rinkmeną, pridedu modifikuotą kontentą
@@ -143,6 +191,10 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
         #endregion
 
         #region HistoryDataManipulation
+
+        /// <summary>
+        /// This method writes to txt file, the date and time @ which program was launched
+        /// </summary>
         public static void CashRegistryStartUpTime()
         {
             File.AppendAllText(historyDataPath, $"\n++++++++++\n(!) KASA ATIDARYTA: {DateTime.Today.Year}-" +
@@ -150,10 +202,20 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
                                                                                   $"{DateTime.Today.Day}, " +
                                                                                   $"{DateTime.Now.Hour}:{DateTime.Now.Minute}");
         }
+
+        /// <summary>
+        /// This method writes cheques generated for consumer to txt file
+        /// </summary>
+        /// <param name="content"></param>
         public static void WriteChequeToHistory(string content)
         {
             File.AppendAllText(historyDataPath, $"{content}\n");
         }
+
+        /// <summary>
+        /// This method writes to txt file, the date and time @ which program was exited
+        /// </summary>
+        /// <param name="content"></param>
         public static void WriteSummaryToHistory(string content)
         {
             File.AppendAllText(historyDataPath, $"{content}\n----------\n(!) KASA UŽDARYTA: {DateTime.Today.Year}-" +

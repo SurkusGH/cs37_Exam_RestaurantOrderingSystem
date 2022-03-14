@@ -9,7 +9,7 @@ namespace cs37_Exam_RestaurantOrderingSystem
         {
             Console.WriteLine("cs37_Exam_RestaurantOrderingSystem");
 
-            #region Asignment
+            #region ASIGNMENT
             // RESTORANO SISTEMA:
             // (1) Padavėja turi galėti užregistruoti žmogaus užsakymą:
             //    (1.1) Prekės pavadinimas + kaina eurais;
@@ -39,7 +39,6 @@ namespace cs37_Exam_RestaurantOrderingSystem
             #endregion
 
             RootFunction.RunProgram();
-
         }
     }
 }

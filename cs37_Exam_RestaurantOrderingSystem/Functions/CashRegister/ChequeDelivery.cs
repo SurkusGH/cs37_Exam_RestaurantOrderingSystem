@@ -11,7 +11,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions.ChequeSy
         {
             // Mime stands for Multiple Internet Mail Extensions
             // Tools -> Nuget Package Manager -> Package manager console: pm> Install-Package MailKit
-            // Less secure app access (G Account security settings)
+            // (!) Less secure app access (Google Account security settings)
             MimeMessage message = new MimeMessage(); // <-- Sukuriu naują message objektą, į kurį talpinsiu datą laiško
             message.From.Add(new MailboxAddress("C# Čekis", "DotNetSendingEmail@gmail.com")); // <-- šitą dalį gavėjas matys kaip sender lauką
 
