@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using cs37_Exam_RestaurantOrderingSystem.Functions.GUI;
 
 namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 {
