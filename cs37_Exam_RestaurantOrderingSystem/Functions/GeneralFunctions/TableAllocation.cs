@@ -17,22 +17,22 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             if (RootFunction.tables.Where(t => t.PeaopleCanBeSeated == seats).All(t => t.TableTaken == true))
             {
                 Console.Clear();
-                Console.WriteLine($"(!) Visi {seats} sėdimų vietų staliukai užimti");
-                Console.WriteLine($" -> 4> atlaisvinti staliuką");
-                FunctionCalls.MenuChoice();
-                ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
+                Console.WriteLine($"\n\n(!) Visi {seats} sėdimų vietų staliukai užimti");
+
+                Thread.Sleep(2000);
+                RootFunction.MainMenu();
             }
         }
 
         /// <summary>
         /// This method uses LINQ to automatically select table by seat parameter
         /// </summary>
-        /// <param name="seats"></param>
+        /// <param Indicates the table which has cetrain amount of seats="seats"></param>
         /// <returns></returns>
         public static Table_DataType AutomaticTableSelector(int seats)
         {
             if (RootFunction.tables.Where(t => t.PeaopleCanBeSeated == seats).All(t => t.TableTaken != true)
-                || !RootFunction.tables.Where(t => t.PeaopleCanBeSeated == seats).All(t => t.TableTaken != true))
+            || !RootFunction.tables.Where(t => t.PeaopleCanBeSeated == seats).All(t => t.TableTaken == false))
             {
                 return RootFunction.tables.Where(t => t.PeaopleCanBeSeated == seats).First(t => t.TableTaken == false);
             }

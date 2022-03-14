@@ -221,7 +221,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
             File.AppendAllText(historyDataPath, $"{content}\n----------\n(!) KASA UŽDARYTA: {DateTime.Today.Year}-" +
                                                                                           $"{DateTime.Today.Month}-" +
                                                                                           $"{DateTime.Today.Day}, " +
-                                                                                          $"{DateTime.Now.Hour}:{DateTime.Now.Minute}");
+                                                                                          $"{DateTime.Now.Hour}:{DateTime.Now.Minute}\n\n");
         }
         #endregion
     }
