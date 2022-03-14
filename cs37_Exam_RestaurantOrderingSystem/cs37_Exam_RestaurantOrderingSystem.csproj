@@ -17,7 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Functions\CashRegister\" />
-    <Folder Include="Functions\CashRegister\SalesHistory\" />
     <Folder Include="Functions\CashRegister\ChequeSystem\" />
   </ItemGroup>
 </Project>

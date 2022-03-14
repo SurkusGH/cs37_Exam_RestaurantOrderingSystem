@@ -10,6 +10,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
 {
     public class ChequeGenerator
     {
+
         #region Globals
         public static List<string> externalCheque = new List<string>();
         public static string Cheque;
@@ -46,10 +47,12 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             RootFunction.drinks[index].ItemsSold++;
 
             Sum = RootFunction.tables[RootFunction.tables.IndexOf(TableAllocation.AutomaticTableSelector(tableIndex))].OrderSum;
+
         }
-        public static void ChequeConstructor_Reset()
+        public static void ChequeConstructor_RecordAndReset()
         {
             Turnover += Sum;
+            FileHandler.WriteChequeToHistory(Cheque);
             externalCheque.Clear();
             Cheque = "";
             Sum = 0;
@@ -66,16 +69,19 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
             Cheque += "";
             Cheque += $"\nČekio data: {DateTime.Today.Year}-{DateTime.Today.Month}-{DateTime.Today.Day}, " +
                                                              $"{DateTime.Now.Hour}:{DateTime.Now.Minute} ";
-            Cheque += "";
+            Cheque += "\n";
         }
+
         public static void ChequeConstructor_Shop()
         {
-            InternalCheque += $"Parduotos prekės:";
+            InternalCheque += $"\nParduotos prekės:";
             var sortedFoodList = RootFunction.foods.Where(f => f.ItemsSold > 0);
             foreach (var item in sortedFoodList) { InternalCheque += $"\nitem {item.ID} - sold: {item.ItemsSold}"; }
             var sortedDrinksList = RootFunction.drinks.Where(d => d.ItemsSold > 0);
             foreach (var item in sortedDrinksList){ InternalCheque += $"\nitem {item.ID} - sold: {item.ItemsSold}"; }
             InternalCheque += $"\nApyvarta: {Turnover} Eur";
+
+            FileHandler.WriteSummaryToHistory(InternalCheque);
         }
 
         public static void IsCheckSentToUser()
@@ -87,7 +93,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
                     ChequeConstructor_Client();
                     ChequeDelivery.SendCheque();
                     Console.WriteLine("\n\n(!) Čekis -> išsiųstas");
-                    ChequeConstructor_Reset();
+                    ChequeConstructor_RecordAndReset();
                     Thread.Sleep(2000);
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();
@@ -96,7 +102,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.CashRegister.ChequeSystem
                     break;
                 case "n":
                     Console.WriteLine("\n\n(X) Čekis -> nesiųstas");
-                    ChequeConstructor_Reset();
+                    ChequeConstructor_RecordAndReset();
                     Thread.Sleep(2000);
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation();

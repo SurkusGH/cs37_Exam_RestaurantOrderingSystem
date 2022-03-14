@@ -1,4 +1,5 @@
 ﻿using cs37_Exam_RestaurantOrderingSystem.DataType;
+using cs37_Exam_RestaurantOrderingSystem.DataTypes;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -13,6 +14,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
         static string tableDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Tables.csv";
         static string foodDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Food.csv";
         static string drinksDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\Drinks.csv";
+        static string historyDataPath = $@"D:\GitHub\cs37_Exam_RestaurantOrderingSystem\cs37_Exam_RestaurantOrderingSystem\CSV_DB\History.txt";
         //MacOS
         //static string tableDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Tables.csv";
         //static string foodDataPath = $@"/Users/surkus/GitHub/cs37_Exam_RestaurantOrderingSystem/cs37_Exam_RestaurantOrderingSystem/CSV_DB/Food.csv";
@@ -137,6 +139,27 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GeneralFunctions
                                                                                 $"{drinksData.NoSuggar}" +
                                                                                 $"{drinksData.ItemsSold}" +
                                                                                 Environment.NewLine));
+        }
+        #endregion
+
+        #region HistoryDataManipulation
+        public static void CashRegistryStartUpTime()
+        {
+            File.AppendAllText(historyDataPath, $"\n++++++++++\n(!) KASA ATIDARYTA: {DateTime.Today.Year}-" +
+                                                                                  $"{DateTime.Today.Month}-" +
+                                                                                  $"{DateTime.Today.Day}, " +
+                                                                                  $"{DateTime.Now.Hour}:{DateTime.Now.Minute}");
+        }
+        public static void WriteChequeToHistory(string content)
+        {
+            File.AppendAllText(historyDataPath, $"{content}\n");
+        }
+        public static void WriteSummaryToHistory(string content)
+        {
+            File.AppendAllText(historyDataPath, $"{content}\n----------\n(!) KASA UŽDARYTA: {DateTime.Today.Year}-" +
+                                                                                          $"{DateTime.Today.Month}-" +
+                                                                                          $"{DateTime.Today.Day}, " +
+                                                                                          $"{DateTime.Now.Hour}:{DateTime.Now.Minute}");
         }
         #endregion
     }

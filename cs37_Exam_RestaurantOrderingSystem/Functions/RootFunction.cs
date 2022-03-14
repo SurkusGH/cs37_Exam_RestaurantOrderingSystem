@@ -17,7 +17,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
         public static List<Drinks_DataType> drinks = FileHandler.ReadDrinksData();
         public static void RunProgram()
         {
-
+            FileHandler.CashRegistryStartUpTime();
             ConsoleStringInterpolation.GUI_Menu_TableSelector(); // <-- Tik spausdina
             ConsoleStringInterpolation.GUI_Menu_TablesGraphicRepresentation(); // <-- Tik spausdina kaip atrodo staliukai
             FunctionCalls.MenuChoice(); // <-- Tik prašo input'o

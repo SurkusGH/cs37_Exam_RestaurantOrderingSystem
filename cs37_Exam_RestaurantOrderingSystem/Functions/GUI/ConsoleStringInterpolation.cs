@@ -29,42 +29,42 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
         {
             Console.Clear();
             Console.WriteLine($"\n Staliukų pasirinkimas: " +
-                              $"\n (1) 2-vietis staliukas;    " +
-                              $"\n (2) 4-vietis staliukas;    " +
-                              $"\n (3) 8-vietis staliukas.    " +
-                              $"\n (4) Atlaisvinti staliuką." +
-                              $"\n\n (0) Uždaryti kasą.\n");
+                              $"\n  1> 2-vietis staliukas;    " +
+                              $"\n  2> 4-vietis staliukas;    " +
+                              $"\n  3> 8-vietis staliukas.    " +
+                              $"\n  4> Atlaisvinti staliuką." +
+                              $"\n\n  0> Uždaryti kasą.\n");
         }
 
         public static void GUI_Menu_FoodSelector_TableForTwo()
         {
             Console.Clear();
-            Console.WriteLine($"\n (*) Staliukų pasirinkimas: [->1]" +
-                              $"\n (1) 2-vietis staliukas     --> (1) Maistas" +
-                              $"\n                            --> (2) Gėrimai" +
+            Console.WriteLine($"\n  * Staliukų pasirinkimas: [->1]" +
+                              $"\n  1> 2-vietis staliukas     -->  1> Maistas" +
+                              $"\n                            -->  2> Gėrimai" +
                               $"\n                            " +
                               $"\n                            " +
-                              $"\n (0) Grįžti <--");
+                              $"\n  0> Grįžti <--");
         }
         public static void GUI_Menu_FoodSelector_TableForFour()
         {
             Console.Clear();
-            Console.WriteLine($"\n (*) Staliukų pasirinkimas: [->2]" +
+            Console.WriteLine($"\n  *  Staliukų pasirinkimas: [->2]" +
                               $"\n                                 " +
-                              $"\n (2) 4-vietis staliukas     --> (1) Maistas" +
-                              $"\n                            --> (2) Gėrimai" +
+                              $"\n  2> 4-vietis staliukas     -->  1> Maistas" +
+                              $"\n                            -->  2> Gėrimai" +
                               $"\n                            " +
-                              $"\n (0) Grįžti <--");
+                              $"\n  0> Grįžti <--");
         }
         public static void GUI_Menu_FoodSelector_TableForEight()
         {
             Console.Clear();
-            Console.WriteLine($"\n (*) Staliukų pasirinkimas: [->3] " +
+            Console.WriteLine($"\n  *  Staliukų pasirinkimas: [->3] " +
                               $"\n                            " +
                               $"\n                            " +
-                              $"\n (3) 2-vietis staliukas     --> (1) Maistas" +
-                              $"\n                            --> (2) Gėrimai" +
-                              $"\n (0) Grįžti <--");
+                              $"\n  3> 2-vietis staliukas     -->  1> Maistas" +
+                              $"\n                            -->  2> Gėrimai" +
+                              $"\n  0> Grįžti <--");
         }
         #endregion
 
@@ -80,8 +80,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                                                               $"{f.Price}, Eur " +
                                                               $"paruošiamas per {f.TimeToPrepare}, " +
                                                               $"patiekalas: {Food_DataType.IsVeganPrintingHelper(f.IsVegan)}"));
-                                            Console.WriteLine($"\n (6) -> Pereiti į gėrymų meniu <-");
-                                            Console.WriteLine($"\n (0) Baigti užsakymą");
+                                            Console.WriteLine($"\n  6> -> Pereiti į gėrymų meniu <-");
+                                            Console.WriteLine($"\n  0> Baigti užsakymą");
         }
         public static void GUI_Drinks_SubMenu()
         {
@@ -93,8 +93,8 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions.GUI
                                                                $"{d.Price}, Eur " +
                                                                $"paruošiamas per {d.TimeToPrepare}, " +
                                                                $"patiekalas yra: {Drinks_DataType.NoSugarPrintingHelper(d.NoSuggar)}"));
-                                             Console.WriteLine($"\n (6) -> Pereiti į maisto meniu <-");
-                                             Console.WriteLine($"\n (0) Baigti užsakymą");
+                                             Console.WriteLine($"\n  6> -> Pereiti į maisto meniu <-");
+                                             Console.WriteLine($"\n  0> Baigti užsakymą");
         }   
 
         #endregion

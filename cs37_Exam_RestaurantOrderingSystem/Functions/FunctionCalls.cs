@@ -116,7 +116,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
                     ChequeGenerator.IsCheckSentToUser();
-                    ChequeGenerator.ChequeConstructor_Reset();
+                    ChequeGenerator.ChequeConstructor_RecordAndReset();
                     MenuChoice();
                     break;
             }
@@ -160,6 +160,7 @@ namespace cs37_Exam_RestaurantOrderingSystem.Functions
                     ConsoleStringInterpolation.GUI_Menu_TableSelector();
                     TableAllocation.SetTableAsTaken();
                     ChequeGenerator.IsCheckSentToUser();
+                    ChequeGenerator.ChequeConstructor_RecordAndReset();
                     MenuChoice();
                     break;
             }
